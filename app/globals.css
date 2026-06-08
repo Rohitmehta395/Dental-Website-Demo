@@ -1,26 +1,249 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================
+   RecallDent Design System — Clinical Precision
+   Based on Stitch project design tokens
+   ============================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --- Brand Colors --- */
+  --color-brand-navy: #0F172A;
+  --color-brand-navy-light: #1E293B;
+  --color-brand-navy-dark: #020617;
+  --color-brand-blue-light: #E0F2FE;
+  --color-brand-sky: #38BDF8;
+  --color-brand-sky-dark: #0284C7;
+  --color-brand-gray-light: #F1F5F9;
+  --color-brand-border: #E2E8F0;
+
+  /* --- Surface System (Material-inspired from Stitch) --- */
+  --color-surface: #F7F9FB;
+  --color-surface-dim: #D8DADC;
+  --color-surface-bright: #F7F9FB;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #F2F4F6;
+  --color-surface-container: #ECEEF0;
+  --color-surface-container-high: #E6E8EA;
+  --color-surface-container-highest: #E0E3E5;
+
+  /* --- On Surface --- */
+  --color-on-surface: #191C1E;
+  --color-on-surface-variant: #45464D;
+
+  /* --- Primary --- */
+  --color-primary: #000000;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #131B2E;
+  --color-on-primary-container: #7C839B;
+  --color-primary-fixed: #DAE2FD;
+  --color-primary-fixed-dim: #BEC6E0;
+
+  /* --- Secondary --- */
+  --color-secondary: #50616B;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #D3E5F1;
+  --color-on-secondary-container: #566771;
+  --color-secondary-fixed: #D3E5F1;
+  --color-secondary-fixed-dim: #B7C9D5;
+
+  /* --- Tertiary --- */
+  --color-tertiary: #000000;
+  --color-on-tertiary: #FFFFFF;
+  --color-tertiary-container: #001E2C;
+  --color-on-tertiary-container: #008EBF;
+  --color-tertiary-fixed: #C4E7FF;
+  --color-tertiary-fixed-dim: #7BD0FF;
+
+  /* --- Error --- */
+  --color-error: #BA1A1A;
+  --color-on-error: #FFFFFF;
+  --color-error-container: #FFDAD6;
+  --color-on-error-container: #93000A;
+
+  /* --- Status Colors --- */
+  --color-success: #16A34A;
+  --color-success-light: #DCFCE7;
+  --color-warning: #E65100;
+  --color-warning-light: #FFF3E0;
+  --color-info: #0284C7;
+  --color-info-light: #E0F2FE;
+
+  /* --- Outline --- */
+  --color-outline: #76777D;
+  --color-outline-variant: #C6C6CD;
+
+  /* --- Inverse --- */
+  --color-inverse-surface: #2D3133;
+  --color-inverse-on-surface: #EFF1F3;
+  --color-inverse-primary: #BEC6E0;
+
+  /* --- Background --- */
+  --color-background: #F7F9FB;
+  --color-on-background: #191C1E;
+
+  /* --- Foreground (alias) --- */
+  --color-foreground: #191C1E;
+
+  /* --- Font Family --- */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* --- Font Size Scale (Stitch Typography) --- */
+  --text-headline-xl: 40px;
+  --text-headline-xl--line-height: 48px;
+  --text-headline-xl--letter-spacing: -0.02em;
+  --text-headline-xl--font-weight: 700;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--letter-spacing: -0.01em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-body-sm--font-weight: 400;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 20px;
+  --text-label-md--letter-spacing: 0.01em;
+  --text-label-md--font-weight: 500;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--font-weight: 600;
+
+  /* --- Border Radius --- */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* --- Shadows (Stitch Elevation) --- */
+  --shadow-level-1: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-level-2: 0 10px 25px rgba(15, 23, 42, 0.1);
+  --shadow-level-3: 0 20px 40px rgba(15, 23, 42, 0.15);
+
+  /* --- Sidebar --- */
+  --sidebar-width: 16rem;
+  --topbar-height: 4rem;
+
+  /* --- Animations --- */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  --animate-slide-in-right: slide-in-right 0.3s ease-out;
+  --animate-scale-in: scale-in 0.3s ease-out;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* --- Keyframes --- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* --- Base Styles --- */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Focus Styles --- */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-sky);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* --- Selection --- */
+::selection {
+  background-color: var(--color-brand-blue-light);
+  color: var(--color-brand-navy);
+}
+
+/* --- Utility Classes --- */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-brand-navy), var(--color-brand-sky-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.card-hover {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-level-2);
 }
