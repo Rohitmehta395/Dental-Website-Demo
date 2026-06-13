@@ -34,7 +34,7 @@ export default function HomePage() {
   return (
     <div className="w-full bg-background font-sans">
       {/* ===== HERO SECTION (Premium Editorial) ===== */}
-      <section ref={targetRef} className="relative min-h-[100vh] w-full flex items-center justify-center overflow-hidden pt-20">
+      <section ref={targetRef} className="relative min-h-[100vh] w-full flex flex-col justify-start lg:justify-center overflow-hidden pt-28 pb-12 lg:pt-20 lg:pb-0">
         <div className="absolute inset-0 bg-surface-bright/40" />
         {/* Subtle animated gradients */}
         <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-b from-brand-sky/10 to-transparent blur-[120px] pointer-events-none opacity-60 mix-blend-multiply" />
@@ -42,10 +42,10 @@ export default function HomePage() {
 
         <motion.div 
           style={{ y: yHero, opacity: opacityHero }}
-          className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center"
         >
           {/* Text Content */}
-          <div className="lg:col-span-6 flex flex-col justify-center pt-10 lg:pt-0">
+          <div className="lg:col-span-6 flex flex-col justify-center order-1 pt-0 lg:pt-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="text-5xl sm:text-6xl lg:text-[5rem] font-bold text-brand-navy leading-[1.05] tracking-tight mb-6"
+              className="text-[2.75rem] leading-[1.1] sm:text-6xl lg:text-[5rem] font-bold text-brand-navy lg:leading-[1.05] tracking-tight mb-5 lg:mb-6"
             >
               Redefining the <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky-dark to-brand-sky">
@@ -80,7 +80,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg font-light"
+              className="text-base sm:text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-8 lg:mb-10 max-w-lg font-light"
             >
               Expert care, modern technology, and a focus on your comfort. We craft beautiful, healthy smiles without the clinical anxiety.
             </motion.p>
@@ -89,11 +89,11 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-3 lg:gap-4 w-full"
             >
               <Link
                 href="/appointment"
-                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-navy text-white rounded-2xl font-semibold overflow-hidden transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-navy text-white rounded-2xl font-semibold overflow-hidden transition-transform hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                 <span className="relative z-10 flex items-center gap-2">
@@ -102,7 +102,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-navy border border-surface-container rounded-2xl font-semibold hover:bg-surface-container-low transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-navy border border-surface-container rounded-2xl font-semibold hover:bg-surface-container-low transition-colors w-full sm:w-auto text-center"
               >
                 Meet The Doctor
               </Link>
@@ -110,12 +110,12 @@ export default function HomePage() {
           </div>
 
           {/* Image Composition */}
-          <div className="lg:col-span-6 relative h-[450px] lg:h-[550px] w-full hidden md:block">
+          <div className="lg:col-span-6 relative h-[350px] sm:h-[450px] lg:h-[550px] w-full mt-6 lg:mt-0 order-2">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-              className="absolute inset-4 lg:inset-8 rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/50"
+              className="absolute inset-0 lg:inset-8 rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/50"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
@@ -132,14 +132,14 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30, x: -20 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              className="absolute bottom-20 -left-6 z-20 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-surface-container flex items-center gap-4"
+              className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 lg:bottom-20 lg:-left-6 z-20 bg-white/90 backdrop-blur-xl p-4 sm:p-5 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-surface-container flex items-center gap-3 sm:gap-4 scale-95 sm:scale-100 origin-bottom-left"
             >
-              <div className="w-12 h-12 rounded-full bg-brand-sky/10 flex items-center justify-center">
-                <CheckCircle2 className="w-6 h-6 text-brand-sky-dark" />
+              <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-brand-sky/10 flex items-center justify-center">
+                <CheckCircle2 className="w-5 h-5 lg:w-6 lg:h-6 text-brand-sky-dark" />
               </div>
               <div>
-                <p className="text-sm font-bold text-brand-navy">Accepting</p>
-                <p className="text-xs text-on-surface-variant font-medium">New Patients</p>
+                <p className="text-xs lg:text-sm font-bold text-brand-navy">Accepting</p>
+                <p className="text-[10px] lg:text-xs text-on-surface-variant font-medium">New Patients</p>
               </div>
             </motion.div>
           </div>
