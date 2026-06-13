@@ -22,7 +22,7 @@ export default function CampaignsPage() {
   return (
     <PageTransition>
       {/* Header */}
-      <div className="flex justify-between items-end mb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-8">
         <div>
           <h2 className="text-3xl font-semibold text-primary tracking-tight">
             Reactivation Campaigns
@@ -31,7 +31,7 @@ export default function CampaignsPage() {
             Launch targeted campaigns to bring patients back and recover revenue.
           </p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2.5 bg-primary-container text-on-primary rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
+        <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-primary-container text-on-primary rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
           <Plus className="w-4 h-4" />
           New Campaign
         </button>

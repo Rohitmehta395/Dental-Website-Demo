@@ -111,13 +111,13 @@ export default function MessagingPage() {
             </div>
 
             {/* Footer */}
-            <div className="p-5 border-t border-surface-container flex justify-between items-center bg-white mt-auto">
+            <div className="p-5 border-t border-surface-container flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white mt-auto">
               <p className="text-sm text-on-surface-variant">142/160 chars (1 SMS segment)</p>
-              <div className="flex gap-3">
-                <button className="px-5 py-2.5 rounded-xl border border-surface-container text-sm font-semibold text-primary hover:bg-surface-container-low transition-colors">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <button className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-surface-container text-sm font-semibold text-primary hover:bg-surface-container-low transition-colors text-center justify-center">
                   Save Draft
                 </button>
-                <button className="px-5 py-2.5 rounded-xl bg-primary text-on-primary text-sm font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
+                <button className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-primary text-on-primary text-sm font-semibold flex justify-center items-center gap-2 hover:opacity-90 transition-opacity shadow-sm">
                   <Send className="w-4 h-4" />
                   Send Now
                 </button>

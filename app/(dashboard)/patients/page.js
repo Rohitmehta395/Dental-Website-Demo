@@ -58,7 +58,7 @@ function PatientsContent() {
   return (
     <PageTransition>
       {/* Header */}
-      <div className="flex justify-between items-end mb-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-6">
         <div>
           <h2 className="text-3xl font-semibold text-primary tracking-tight">Patients</h2>
           <p className="text-sm text-on-surface-variant mt-1">
@@ -72,7 +72,7 @@ function PatientsContent() {
         </div>
         <Link
           href="/patients/new"
-          className="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm"
+          className="flex items-center justify-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-xl text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm w-full sm:w-auto"
         >
           <Plus className="w-4 h-4" />
           Add New Patient
