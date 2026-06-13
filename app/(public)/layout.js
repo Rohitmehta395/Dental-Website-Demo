@@ -37,14 +37,14 @@ function PublicHeader() {
             <Stethoscope className="w-5 h-5 text-brand-sky" />
           </div>
           <div className="flex flex-col">
-            <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? 'text-brand-navy' : 'text-brand-navy'}`}>
+            <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? 'text-brand-navy' : 'text-white'}`}>
               {clinicConfig.name}
             </span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/50 backdrop-blur-md px-2 py-1.5 rounded-2xl border border-surface-container/50 shadow-sm">
+        <nav className={`hidden md:flex items-center gap-1 backdrop-blur-md px-2 py-1.5 rounded-2xl border transition-colors duration-300 ${scrolled ? 'bg-white/50 border-surface-container/50 shadow-sm' : 'bg-white/10 border-white/20'}`}>
           {publicNavigation.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -54,7 +54,9 @@ function PublicHeader() {
                 className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                   isActive
                     ? "text-brand-navy"
-                    : "text-on-surface-variant hover:text-brand-navy hover:bg-white/50"
+                    : scrolled
+                      ? "text-on-surface-variant hover:text-brand-navy hover:bg-white/50"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {isActive && (
@@ -75,14 +77,18 @@ function PublicHeader() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href={`tel:${clinicConfig.contact.phone.replace(/[^0-9]/g, "")}`}
-            className={`text-sm font-semibold transition-colors duration-300 flex items-center gap-2 ${scrolled ? 'text-brand-navy hover:text-brand-sky' : 'text-brand-navy hover:text-brand-sky'}`}
+            className={`text-sm font-semibold transition-colors duration-300 flex items-center gap-2 ${scrolled ? 'text-brand-navy hover:text-brand-sky' : 'text-white hover:text-brand-sky'}`}
           >
             <Phone className="w-4 h-4" />
             <span className="hidden lg:inline">{clinicConfig.contact.phone}</span>
           </a>
           <Link
             href="/appointment"
-            className="group px-5 py-2.5 bg-brand-navy text-white rounded-xl text-sm font-semibold hover:bg-brand-navy-light transition-all shadow-md hover:shadow-lg flex items-center gap-2"
+            className={`group px-5 py-2.5 rounded-xl text-sm font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2 ${
+              scrolled
+                ? "bg-brand-navy text-white hover:bg-brand-navy-light"
+                : "bg-white text-brand-navy hover:bg-surface-bright"
+            }`}
           >
             Book Visit
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -92,7 +98,11 @@ function PublicHeader() {
         {/* Mobile Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-brand-navy bg-white/50 rounded-xl backdrop-blur-md border border-surface-container/50"
+          className={`md:hidden p-2 rounded-xl backdrop-blur-md border transition-colors ${
+            scrolled
+              ? "text-brand-navy bg-white/50 border-surface-container/50"
+              : "text-white bg-white/10 border-white/20"
+          }`}
         >
           {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
