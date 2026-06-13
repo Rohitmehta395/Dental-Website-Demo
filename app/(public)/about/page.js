@@ -31,8 +31,7 @@ export default function AboutPage() {
       <section className="py-24 lg:py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            
-            <FadeInView className="lg:col-span-5 sticky top-32">
+            <FadeInView className="lg:col-span-5 lg:sticky lg:top-32 z-10">
               <div className="relative aspect-[3/4] w-full rounded-[2.5rem] overflow-hidden shadow-2xl mb-8">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
