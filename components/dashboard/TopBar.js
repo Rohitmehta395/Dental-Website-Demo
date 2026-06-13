@@ -1,17 +1,23 @@
 "use client";
 
-import { Search, Bell, HelpCircle } from "lucide-react";
+import { Search, Bell, HelpCircle, Menu } from "lucide-react";
 import { clinicConfig } from "@/constants/clinic-config";
 import { getInitials } from "@/lib/utils";
 
-export function TopBar() {
+export function TopBar({ onMenuClick }) {
   const staffMember = clinicConfig.staff[3]; // Office Manager
 
   return (
-    <header className="fixed top-0 right-0 w-[calc(100%-16rem)] z-30 bg-surface/80 backdrop-blur-md border-b border-outline-variant h-16 px-8 flex justify-between items-center">
-      {/* Search */}
-      <div className="flex-1 mr-8">
-        <div className="relative">
+    <header className="fixed top-0 right-0 w-full lg:w-[calc(100%-16rem)] z-30 bg-surface/80 backdrop-blur-md border-b border-outline-variant h-16 px-4 lg:px-8 flex justify-between items-center transition-all duration-300">
+      <div className="flex items-center flex-1 mr-4 lg:mr-8">
+        <button 
+          onClick={onMenuClick} 
+          className="lg:hidden mr-2 p-2 -ml-2 text-on-surface-variant hover:text-primary transition-colors rounded-lg"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+        {/* Search */}
+        <div className="flex-1 relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-on-surface-variant pointer-events-none" />
           <input
             type="text"

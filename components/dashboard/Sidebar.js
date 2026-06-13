@@ -9,11 +9,14 @@ import * as LucideIcons from "lucide-react";
 import { UserPlus } from "lucide-react";
 import { motion } from "framer-motion";
 
-export function Sidebar() {
+export function Sidebar({ isOpen, onClose }) {
   const pathname = usePathname();
 
   return (
-    <nav className="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col py-6 px-4 z-40">
+    <nav className={cn(
+      "h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col py-6 px-4 z-40 transition-transform duration-300",
+      isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+    )}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, x: -12 }}
