@@ -211,7 +211,8 @@ export default function AppointmentsPage() {
         </div>
 
         {/* Main Calendar View */}
-        <div className="flex-grow bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-hidden min-w-[600px] w-full">
+        <div className="flex-grow bg-surface-container-lowest rounded-xl shadow-sm border border-surface-container-high overflow-x-auto w-full">
+          <div className="min-w-[600px]">
           {/* Calendar Header */}
           <div className="flex border-b border-surface-container-high">
             <div className="w-16 flex-shrink-0 flex items-center justify-center border-r border-surface-container-high bg-surface">
@@ -331,6 +332,7 @@ export default function AppointmentsPage() {
                </div>
             </div>
 
+          </div>
           </div>
         </div>
       </div>
